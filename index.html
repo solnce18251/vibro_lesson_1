@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С 8 Марта!</title>
+  <style>
+    body {
+      /* Убираем внешние отступы */
+      margin: 0;
+      /* Задаём высоту на весь экран */
+      min-height: 100vh;
+      /* Включаем flexbox для центрирования */
+      display: flex;
+      /* Направление flex-контейнера — вертикальное */
+      flex-direction: column;
+      /* Центрируем по горизонтали */
+      justify-content: center;
+      /* Центрируем по вертикали */
+      align-items: center;
+      /* Градиентный фон в розово-красных тонах */
+      background: linear-gradient(135deg, #ff6b95, #ff8fa3, #ffb3c6);
+      /* Размер фона — фиксированный */
+      background-size: 400% 400%;
+      /* Устанавливаем шрифт */
+      font-family: 'Georgia', serif;
+      /* Цвет текста */
+      color: white;
+      /* Отступы */
+      padding: 20px;
+      /* Анимация градиента */
+      animation: gradientShift 10s ease infinite;
+    }
+    @keyframes gradientShift {
+      /* 0% — начальная позиция градиента */
+      0% { background-position: 0% 50%; }
+      /* 50% — середина анимации */
+      50% { background-position: 100% 50%; }
+      /* 100% — конец анимации, возврат к началу */
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      /* Контейнер для контента */
+      max-width: 600px;
+      /* Отступы внутри контейнера */
+      padding: 40px;
+      /* Полупрозрачный белый фон */
+      background: rgba(255, 255, 255, 0.15);
+      /* Скруглённые углы */
+      border-radius: 20px;
+      /* Тень у контейнера */
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      /* Эффект размытия фона */
+      backdrop-filter: blur(10px);
+      /* Отступы по бокам */
+      margin: 20px;
+    }
+    h1 {
+      /* Размер заголовка */
+      font-size: 3.5rem;
+      /* Отступ снизу */
+      margin-bottom: 30px;
+      /* Центрирование текста */
+      text-align: center;
+      /* Тень у текста */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      /* Убираем стандартные отступы */
+      margin-top: 0;
+    }
+    .poem {
+      /* Размер шрифта стихотворения */
+      font-size: 1.3rem;
+      /* Высота строки для удобства чтения */
+      line-height: 1.8;
+      /* Центрирование текста */
+      text-align: center;
+      /* Тень у текста */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      /* Сохраняем переносы строк */
+      white-space: pre-line;
+    }
+    .flower {
+      /* Размер эмодзи цветка */
+      font-size: 4rem;
+      /* Отступ снизу */
+      margin-bottom: 20px;
+      /* Центрирование */
+      text-align: center;
+      /* Анимация покачивания */
+      animation: sway 3s ease-in-out infinite;
+    }
+    @keyframes sway {
+      /* 0% — начальное положение */
+      0%, 100% { transform: rotate(-10deg); }
+      /* 50% — наклон вправо */
+      50% { transform: rotate(10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flower">🌷💐🌸</div>
+    <h1>С 8 Марта!</h1>
+    <div class="poem">
+      Весна стучится в окна звонко,
+      Солнце дарит теплоту.
+      Будь всегда ты так прекрасна,
+      Словно первая звезда!
+
+      Пусть глаза сияют счастьем,
+      Сердце полнится теплом.
+      Нежность, радость и участье
+      Озаряют твой дом!
+
+      Будь любимой, вдохновлённой,
+      Словно роза, расцветай.
+      Будь здоровой и весёлой,
+      Никогда не унывай!
+    </div>
+    <div class="flower">🌸💐🌷</div>
+  </div>
+</body>
+</html>
