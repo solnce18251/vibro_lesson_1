@@ -6,174 +6,115 @@
   <title>С 8 Марта!</title>
   <style>
     body {
-      /* Убираем внешние отступы */
+      /* Убираем отступы */
       margin: 0;
-      /* Задаём высоту на весь экран */
+      /* Высота на весь экран */
       min-height: 100vh;
-      /* Включаем flexbox для центрирования */
+      /* Центрируем содержимое */
       display: flex;
-      /* Направление flex-контейнера — вертикальное */
+      /* Вертикальное направление */
       flex-direction: column;
       /* Центрируем по горизонтали */
-      justify-content: flex-start;
+      justify-content: center;
       /* Центрируем по вертикали */
       align-items: center;
-      /* Градиентный фон в стиле Jelly Art — мягкие пастельные переливы */
-      background: linear-gradient(135deg, #f5e6ff 0%, #e6f2ff 25%, #ffe6f0 50%, #fff0e6 75%, #f0ffe6 100%);
-      /* Размер фона для анимации */
-      background-size: 400% 400%;
-      /* Устанавливаем шрифт — округлый, мягкий */
-      font-family: 'Verdana', 'Segoe UI', sans-serif;
-      /* Цвет текста */
+      /* Градиентный фон */
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      /* Шрифт */
+      font-family: Arial, sans-serif;
+      /* Белый текст */
       color: white;
-      /* Отступы сверху и по бокам */
-      padding: 40px 10%;
-      /* Анимация градиента */
-      animation: gradientShift 15s ease infinite;
-      /* Высота строки для всего body */
-      line-height: 1.6;
+      /* Отступы */
+      padding: 20px;
+      /* Высота строки */
+      line-height: 1.8;
     }
-    @keyframes gradientShift {
-      /* 0% — начальная позиция градиента */
-      0% { background-position: 0% 50%; }
-      /* 50% — середина анимации */
-      50% { background-position: 100% 50%; }
-      /* 100% — конец анимации, возврат к началу */
-      100% { background-position: 0% 50%; }
-    }
-    .container {
-      /* Контейнер для контента */
-      /* Ширина 80% от экрана */
-      width: 80%;
-      /* Максимальная ширина контейнера */
-      max-width: 600px;
-      /* Отступы внутри контейнера */
-      padding: 50px 40px;
-      /* Белый фон с высокой непрозрачностью */
-      background: rgba(255, 255, 255, 0.95);
-      /* Скруглённые углы — сильно для эффекта желе */
-      border-radius: 40px;
-      /* Тень у контейнера — мягкая, объёмная */
-      box-shadow: 
-        0 20px 60px rgba(150, 100, 200, 0.15),
-        0 0 40px rgba(200, 150, 255, 0.1),
-        inset 0 0 30px rgba(255, 255, 255, 0.8);
-      /* Эффект размытия фона */
-      backdrop-filter: blur(20px);
-      /* Отступы по бокам */
-      margin: 40px auto;
-      /* Глянцевый эффект */
-      border: 1px solid rgba(255, 255, 255, 0.8);
-    }
-    h1 {
-      /* Размер заголовка — адаптивный через viewport units */
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      /* Отступ снизу */
-      margin-bottom: 25px;
-      /* Центрирование текста */
-      text-align: center;
-      /* Тень у текста — мягкая, цветная */
-      text-shadow: 2px 2px 8px rgba(180, 130, 255, 0.3);
-      /* Убираем стандартные отступы */
-      margin-top: 0;
-      /* Плавное изменение размера шрифта */
-      transition: font-size 0.3s ease;
-      /* Перенос длинных слов */
-      word-wrap: break-word;
-      /* Перенос слов по границе контейнера */
-      overflow-wrap: break-word;
-      /* Максимальная ширина — 100% контейнера */
-      max-width: 100%;
-      /* Цвет заголовка — тёмно-фиолетовый */
-      color: #4a3060;
-      /* Жирность шрифта */
-      font-weight: 700;
-      /* Округлые буквы */
-      letter-spacing: 0.5px;
-    }
-    .poem {
-      /* Размер шрифта стихотворения — адаптивный через viewport units */
-      font-size: clamp(0.95rem, 2vw, 1.2rem);
-      /* Высота строки для удобства чтения */
-      line-height: 2;
-      /* Центрирование текста */
-      text-align: center;
-      /* Тень у текста — мягкая */
-      text-shadow: 1px 1px 3px rgba(180, 130, 255, 0.2);
-      /* Сохраняем переносы строк */
-      white-space: pre-line;
-      /* Адаптивная ширина текста */
-      width: 100%;
-      /* Перенос длинных слов */
-      word-wrap: break-word;
-      /* Перенос слов по границе контейнера */
-      overflow-wrap: break-word;
-      /* Максимальная ширина — 100% контейнера */
-      max-width: 100%;
-      /* Предотвращение горизонтальной прокрутки */
-      overflow-x: hidden;
-      /* Цвет текста — тёмно-серый с оттенком */
-      color: #3a3a4a;
-      /* Сглаживание шрифта */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .flower {
-      /* Размер эмодзи цветка — адаптивный */
-      font-size: clamp(2.5rem, 4vw, 4rem);
+    .emoji-top {
+      /* Размер эмодзи сверху */
+      font-size: 4rem;
       /* Отступ снизу */
       margin-bottom: 20px;
+      /* Анимация */
+      animation: sway 3s ease-in-out infinite;
+    }
+    h1 {
+      /* Размер заголовка */
+      font-size: 3rem;
+      /* Отступ снизу */
+      margin-bottom: 30px;
+      /* Тень текста */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      /* Убираем стандартные отступы */
+      margin-top: 0;
+    }
+    .poem {
+      /* Размер текста стихотворения */
+      font-size: 1.3rem;
       /* Центрирование */
       text-align: center;
-      /* Анимация покачивания */
-      animation: sway 3s ease-in-out infinite;
-      /* Адаптивный размер */
-      transition: font-size 0.3s ease;
-      /* Отражение для эффекта желе */
-      filter: drop-shadow(0 5px 10px rgba(150, 100, 200, 0.2));
+      /* Тень текста */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+      /* Сохраняем переносы строк */
+      white-space: pre-line;
+      /* Максимальная ширина */
+      max-width: 600px;
+    }
+    .emoji-bottom {
+      /* Размер эмодзи снизу */
+      font-size: 3rem;
+      /* Отступ сверху */
+      margin-top: 30px;
+      /* Анимация */
+      animation: pulse 2s ease-in-out infinite;
     }
     @keyframes sway {
-      /* 0% — начальное положение */
-      0%, 100% { transform: rotate(-10deg) scale(1); }
+      /* 0% и 100% — наклон влево */
+      0%, 100% { transform: rotate(-10deg); }
       /* 50% — наклон вправо */
-      50% { transform: rotate(10deg) scale(1.05); }
+      50% { transform: rotate(10deg); }
     }
-    /* Медиа-запрос для мобильных устройств */
+    @keyframes pulse {
+      /* 0% и 100% — обычный размер */
+      0%, 100% { transform: scale(1); }
+      /* 50% — увеличенный размер */
+      50% { transform: scale(1.1); }
+    }
+    /* Адаптивность для мобильных */
     @media (max-width: 600px) {
-      body {
-        /* Уменьшаем отступы на мобильных */
-        padding: 20px 5%;
+      .emoji-top {
+        font-size: 3rem;
       }
-      .container {
-        /* На мобильных контейнер шире */
-        width: 90%;
-        padding: 30px 20px;
-        border-radius: 30px;
+      h1 {
+        font-size: 2rem;
+      }
+      .poem {
+        font-size: 1.1rem;
+      }
+      .emoji-bottom {
+        font-size: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="flower">🌷💐🌸</div>
-    <h1>С 8 Марта!</h1>
-    <div class="poem">
-      Весна стучится в окна звонко,
-      Солнце дарит теплоту.
-      Будь всегда ты так прекрасна,
-      Словно первая звезда!
+  <div class="emoji-top">🌷💐🌸</div>
+  <h1>С 8 МАРТА!</h1>
+  <div class="poem">
+Весна пришла, сияют глазки,
+Мир полон света и тепла.
+Пусть каждый день будет как сказка,
+Полна любви и волшебства!
 
-      Пусть глаза сияют счастьем,
-      Сердце полнится теплом.
-      Нежность, радость и участье
-      Озаряют твой дом!
+Цветов, улыбок и внимания,
+Мечты исполнятся пускай!
+Вы — воплощение желаний,
+Вы — райский, нежный, дивный рай!
 
-      Будь любимой, вдохновлённой,
-      Словно роза, расцветай.
-      Будь здоровой и весёлой,
-      Никогда не унывай!
-    </div>
-    <div class="flower">🌸💐🌷</div>
+Будьте счастливы, любимы,
+Прекрасны, как сама весна!
+Вы — наши звёзды неземные,
+Вы — жизнь, вы — радость, вы — весна!
   </div>
+  <div class="emoji-bottom">💖💕💗💕💖</div>
 </body>
 </html>
