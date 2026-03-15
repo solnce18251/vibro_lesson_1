@@ -15,7 +15,7 @@
       /* Направление flex-контейнера — вертикальное */
       flex-direction: column;
       /* Центрируем по горизонтали */
-      justify-content: center;
+      justify-content: flex-start;
       /* Центрируем по вертикали */
       align-items: center;
       /* Градиентный фон в розово-красных тонах */
@@ -26,10 +26,12 @@
       font-family: 'Georgia', serif;
       /* Цвет текста */
       color: white;
-      /* Отступы */
-      padding: 20px;
+      /* Отступы сверху и по бокам */
+      padding: 40px 10%;
       /* Анимация градиента */
       animation: gradientShift 10s ease infinite;
+      /* Высота строки для всего body */
+      line-height: 1.6;
     }
     @keyframes gradientShift {
       /* 0% — начальная позиция градиента */
@@ -41,7 +43,10 @@
     }
     .container {
       /* Контейнер для контента */
-      max-width: 600px;
+      /* Ширина 80% от экрана */
+      width: 80%;
+      /* Максимальная ширина контейнера */
+      max-width: 800px;
       /* Отступы внутри контейнера */
       padding: 40px;
       /* Полупрозрачный белый фон */
@@ -53,13 +58,12 @@
       /* Эффект размытия фона */
       backdrop-filter: blur(10px);
       /* Отступы по бокам */
-      margin: 20px;
+      margin: 20px auto;
       /* Адаптивная ширина — 90% на маленьких экранах */
-      width: 90%;
     }
     h1 {
-      /* Размер заголовка */
-      font-size: 3.5rem;
+      /* Размер заголовка — адаптивный через viewport units */
+      font-size: clamp(2rem, 5vw, 4rem);
       /* Отступ снизу */
       margin-bottom: 30px;
       /* Центрирование текста */
@@ -78,8 +82,8 @@
       max-width: 100%;
     }
     .poem {
-      /* Размер шрифта стихотворения */
-      font-size: 1.3rem;
+      /* Размер шрифта стихотворения — адаптивный через viewport units */
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
       /* Высота строки для удобства чтения */
       line-height: 1.8;
       /* Центрирование текста */
@@ -100,8 +104,8 @@
       overflow-x: hidden;
     }
     .flower {
-      /* Размер эмодзи цветка */
-      font-size: 4rem;
+      /* Размер эмодзи цветка — адаптивный */
+      font-size: clamp(2.5rem, 4vw, 5rem);
       /* Отступ снизу */
       margin-bottom: 20px;
       /* Центрирование */
@@ -111,57 +115,23 @@
       /* Адаптивный размер */
       transition: font-size 0.3s ease;
     }
-    /* Медиа-запрос для планшетов (до 768px) */
-    @media (max-width: 768px) {
-      h1 {
-        /* Уменьшаем заголовок на планшетах */
-        font-size: 2.5rem;
-      }
-      .poem {
-        /* Уменьшаем шрифт стихотворения */
-        font-size: 1.1rem;
-      }
-      .flower {
-        /* Уменьшаем цветы */
-        font-size: 3rem;
-      }
-      .container {
-        /* Уменьшаем отступы контейнера */
-        padding: 30px;
-      }
-    }
-    /* Медиа-запрос для мобильных (до 480px) */
-    @media (max-width: 480px) {
-      h1 {
-        /* Ещё меньше заголовок на мобильных */
-        font-size: 2rem;
-      }
-      .poem {
-        /* Ещё меньше шрифт стихотворения */
-        font-size: 1rem;
-        /* Высота строки для мобильных */
-        line-height: 1.6;
-      }
-      .flower {
-        /* Ещё меньше цветы */
-        font-size: 2.5rem;
-      }
-      .container {
-        /* Минимальные отступы контейнера */
-        padding: 20px;
-        /* Убираем боковые отступы */
-        margin: 10px;
-      }
-      body {
-        /* Уменьшаем отступы body на мобильных */
-        padding: 10px;
-      }
-    }
     @keyframes sway {
       /* 0% — начальное положение */
       0%, 100% { transform: rotate(-10deg); }
       /* 50% — наклон вправо */
       50% { transform: rotate(10deg); }
+    }
+    /* Медиа-запрос для мобильных устройств */
+    @media (max-width: 600px) {
+      body {
+        /* Уменьшаем отступы на мобильных */
+        padding: 20px 5%;
+      }
+      .container {
+        /* На мобильных контейнер шире */
+        width: 90%;
+        padding: 20px;
+      }
     }
   </style>
 </head>
